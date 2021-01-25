@@ -1,0 +1,15 @@
+.criminalList {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+
+}
+.criminalsContainer > h3 {
+    text-align: center;
+}
+.criminalCard {
+    border: 2px black solid;
+    padding: 10px;
+    margin: 10px;
+    width: 250px;
+}
