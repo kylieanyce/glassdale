@@ -1,10 +1,9 @@
 import { getCriminals, useCriminals } from './criminals/CriminalProvider.js'
 
+const criminalContainer = document.querySelector(".criminalContainer")
+
 export const CriminalList = () => {
-    getCriminals().then(
-        /*
-            Now that you have the data, what
-            component should be rendered?
-        */
+    getCriminals()
+        .
     )
 }
