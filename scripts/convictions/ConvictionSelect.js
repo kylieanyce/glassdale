@@ -4,7 +4,6 @@ const contentTarget = document.querySelector(".filters__crime")
 const eventHub = document.querySelector(".container")
 
 
-// On the event hub, listen for a "change" event.
 eventHub.addEventListener("change", event => {
     console.log("event happened")
     // Only do this if the `crimeSelect` element was changed
@@ -37,9 +36,9 @@ const render = convictionsCollection => {
         <select class="dropdown" id="crimeSelect">
             <option value="0">Please select a crime...</option>
             ${
-                convictionsCollection.map(conviction => {
-                    const name = conviction.name
-                    return `<option value=${conviction.id}>${name}</option>`
+                convictionsCollection.map(convictions => {
+                    const name = convictions.name
+                    return `<option>${name}</option>`
                 })
             }
         </select>
