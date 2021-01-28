@@ -1,1 +1,0 @@
-import { useConvictions } from "./ConvictionDataProvider";
