@@ -33,7 +33,7 @@ eventHub.addEventListener("crimeChosen", event => {
     if (event.detail.crimeThatWasChosen !== "0"){
 
         const convictionsArray = useConvictions()
-
+        debugger
         const chosenConvictionObj = convictionsArray.find(convictionObj => {
             console.log("currently checking", convictionObj)
             return convictionObj.id === parseInt(event.detail.crimeThatWasChosen)
