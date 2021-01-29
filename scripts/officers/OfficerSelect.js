@@ -6,27 +6,21 @@ const eventHub = document.querySelector(".container")
 //Dispatches officerSelected------------------------------------------------
 eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "officerSelect") {
-        // Get the name of the selected officer
+        console.log("selected")
         const selectedOfficer = changeEvent.target.value
-
-        // Define a custom event
         const customEvent = new CustomEvent("officerSelected", {
             detail: {
                 officer: selectedOfficer
             }
         })
-
-        // Dispatch event to event hub
         eventHub.dispatchEvent(customEvent)
     }
 })
 
 //Get officers from API for the dropdown menu ----------------------------------
 export const OfficerSelect = () => {
-    // Trigger fetching the API data and loading it into application state
     getOfficers()
     .then( () => {
-      // Get all officers from application state
         const officers = useOfficers()
         render(officers)
     })
@@ -34,7 +28,6 @@ export const OfficerSelect = () => {
 
 //Render the drop down menu ---------------------------------------------------
 const render = officersCollection => {
-    
     contentTarget.innerHTML = `
         <select class="dropdown" id="officerSelect">
             <option value="0">Please select an officer...</option>
