@@ -6,14 +6,6 @@ import { useConvictions } from '../convictions/ConvictionDataProvider.js';
 const eventHub = document.querySelector(".container")
 const criminalContainer = document.querySelector(".criminalsContainer")
 
-export const CriminalList = () => {
-    getCriminals()
-        .then(() => {
-            const criminalArray = useCriminals()
-            renderToDom(criminalArray)
-            }
-        )
-}
 
 const renderToDom = (criminalArray) => {
     let criminalsHTMLrep = ""
@@ -27,46 +19,51 @@ const renderToDom = (criminalArray) => {
             </section>`
 }
 
-// Listen for the custom event you dispatched in ConvictionSelect
-eventHub.addEventListener("crimeChosen", event => {
-    // Use the property you added to the event detail.
-    if (event.detail.crimeThatWasChosen !== "0"){
+export const CriminalList = () => {
+    getCriminals()
+        .then(() => {
+            const criminalArray = useCriminals()
+            renderToDom(criminalArray)
+            }
+        )
+}
 
+
+
+eventHub.addEventListener("crimeChosen", event => {
+    if (event.detail.crimeThatWasChosen !== "0"){
         const convictionsArray = useConvictions()
         // debugger
         const chosenConvictionObj = convictionsArray.find(convictionObj => {
-            console.log("currently checking", convictionObj)
+            // console.log("currently checking", convictionObj)
             return convictionObj.id === parseInt(event.detail.crimeThatWasChosen)
         })
-        
-        console.log(chosenConvictionObj.name)
-        
+        // console.log(chosenConvictionObj.name)
         const criminalArray = useCriminals()
-        /*
-            Filter the criminals application state down to the people that committed the crime
-        */
         const filteredCriminalsArray = criminalArray.filter(criminalObj => criminalObj.conviction === chosenConvictionObj.name)
 
-        /*
-            Then invoke render() and pass the filtered collection as
-            an argument
-        */
         renderToDom(filteredCriminalsArray)
     }
 })
-
 //puts criminal name in officer select drop down----------------------------
-// eventHub.addEventListener("officerSelect", event => {
-//     // How can you access the officer name that was selected by the user?
-//     const officerName = event.???
+eventHub.addEventListener("officerSelected", event => {
+    console.log("event happened")
+    
 
-//     // How can you get the criminals that were arrested by that officer?
-//     const criminals = useCriminals()
-//     criminals.???(
-//         criminalObject => {
-//             if (criminalObject.??? === officerName) {
-//                 return true
-//             }
-//         }
-//     )
-// })
+    // if (event.detail.officer !== "0") {
+    const officerName = event.detail.officer
+    console.log(officerName)
+
+    const criminals = useCriminals()
+    debugger
+    const filteredCriminalsArray = criminals.filter(
+        criminalObject => {
+            if (criminalObject.arrestingOfficer === officerName) {
+                return true
+            }
+            
+        }
+    )
+    renderToDom(filteredCriminalsArray)
+    }
+)
