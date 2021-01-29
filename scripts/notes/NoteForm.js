@@ -23,3 +23,19 @@ const render = () => {
 export const NoteForm = () => {
     render()
 }
+
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "saveNote") {
+
+        const newNote = {
+            date: .value
+        }
+
+        // Change API state and application state
+        saveNote(newNote)
+    }
+})
+
+const NoteForm = () => {
+    // rest of the code here
+}
