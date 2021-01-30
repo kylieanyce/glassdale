@@ -6,7 +6,7 @@ const eventHub = document.querySelector(".container")
 //Dispatches officerSelected------------------------------------------------
 eventHub.addEventListener("change", changeEvent => {
     if (changeEvent.target.id === "officerSelect") {
-        console.log("selected")
+        // console.log("selected")
         const selectedOfficer = changeEvent.target.value
         const customEvent = new CustomEvent("officerSelected", {
             detail: {
@@ -34,7 +34,7 @@ const render = officersCollection => {
             ${
                 officersCollection.map(officer => {
                     const name = officer.name
-                    return `<option value=${officer.id}>${name}</option>`
+                    return `<option value="${officer.name}">${name}</option>`
                 })
             }
         </select>

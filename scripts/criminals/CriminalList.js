@@ -28,12 +28,10 @@ export const CriminalList = () => {
         )
 }
 
-
-
+//listens for crimeChose and matches crime with criminals then sends to DOM-----------------
 eventHub.addEventListener("crimeChosen", event => {
     if (event.detail.crimeThatWasChosen !== "0"){
         const convictionsArray = useConvictions()
-        // debugger
         const chosenConvictionObj = convictionsArray.find(convictionObj => {
             // console.log("currently checking", convictionObj)
             return convictionObj.id === parseInt(event.detail.crimeThatWasChosen)
@@ -45,17 +43,13 @@ eventHub.addEventListener("crimeChosen", event => {
         renderToDom(filteredCriminalsArray)
     }
 })
-//puts criminal name in officer select drop down----------------------------
+
+//listens for which officer chosen and sends matching criminals to DOM----------------------------
 eventHub.addEventListener("officerSelected", event => {
-    console.log("event happened")
-    
-
-    // if (event.detail.officer !== "0") {
-    const officerName = event.detail.officer
-    console.log(officerName)
-
+    // console.log("event happened")
+        const officerName = event.detail.officer
+    // console.log(event.detail)
     const criminals = useCriminals()
-    debugger
     const filteredCriminalsArray = criminals.filter(
         criminalObject => {
             if (criminalObject.arrestingOfficer === officerName) {
