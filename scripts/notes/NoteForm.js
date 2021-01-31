@@ -6,24 +6,24 @@ const eventHub = document.querySelector(".container")
 const render = () => {
     contentTarget.innerHTML = `
             <h4>Add A Note Below</h4>
-            <form>
-                <div>
+            <form class="form">
+                <div class="formBoxes">
                     <label for="note-suspect">Suspect: </label>
                     <input type="text" id="note-suspect">
                 </div>
-                <div>
+                <div class="formBoxes">
                     <label for="note-text">Note: </label>
                     <input type="text" id="note-text">
                 </div>
-                <div>
+                <div class="formBoxes">
                     <label for="note-date">Date: </label>
                     <input type="date" id="note-date">
                 </div>
-                <div>
+                <div class="formBoxes">
                     <label for="note-author">Author: </label>
                     <input type="text" id="note-author">
                 </div>
-                <button id="saveNote">Save Note</button>
+                <button class="formBoxes" id="saveNote">Save Note</button>
             </form>
     `
 }
@@ -42,8 +42,8 @@ eventHub.addEventListener("click", clickEvent => {
         const author = document.getElementById("note-author").value
         
         const newNote = {
-            "note": note,
             "suspect": suspect,
+            "note": note,
             "date": date,
             "author": author
         }
