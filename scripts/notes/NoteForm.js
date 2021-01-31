@@ -42,8 +42,8 @@ eventHub.addEventListener("click", clickEvent => {
         const author = document.getElementById("note-author").value
         
         const newNote = {
-            "note": note,
             "suspect": suspect,
+            "note": note,
             "date": date,
             "author": author
         }
