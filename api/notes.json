@@ -34,6 +34,27 @@
       "date": "2021-01-20",
       "author": "Benny",
       "id": 5
+    },
+    {
+      "suspect": "Levon",
+      "note": "Scaly skin",
+      "date": "2021-01-08",
+      "author": "Chadwick",
+      "id": 6
+    },
+    {
+      "suspect": "JoAnn",
+      "note": "Too many crafts",
+      "date": "2021-01-20",
+      "author": "Michael",
+      "id": 7
+    },
+    {
+      "suspect": "William",
+      "note": "Shady",
+      "date": "2021-01-12",
+      "author": "Bradford",
+      "id": 8
     }
   ]
 }

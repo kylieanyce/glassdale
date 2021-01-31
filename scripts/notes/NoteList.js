@@ -1,6 +1,5 @@
 import { getNotes, useNotes } from "./NoteDataProvider.js";
 import { NoteHTMLConverter } from "./Note.js";
-import { ShowNoteButton } from "./ShowNoteButton.js";
 
 const contentTarget = document.querySelector(".noteList")
 const eventHub = document.querySelector(".container")
@@ -8,7 +7,7 @@ const eventHub = document.querySelector(".container")
 //listens for customevent button clicked and sends to dom-------------------
 eventHub.addEventListener("showNotesClicked", customEvent => {
     NoteList()
-    ShowNoteButton()
+    if (customEvent)
 })
 
 const render = (noteArray) => {
