@@ -1,24 +1,27 @@
-import { getNotes, useNotes } from "./NoteProvider.js";
+import { getNotes, useNotes } from "./NoteDataProvider.js";
 import { NoteHTMLConverter } from "./Note.js";
 
-const contentTarget = document.querySelector(".")
-const eventHub = document.getElementsByClassName(".noteListContainer")
+const contentTarget = document.querySelector(".noteListContainer")
+const eventHub = document.querySelector(".container")
 
+//listens for customevent button clicked and sends to dom-------------------
 eventHub.addEventListener("showNotesClicked", customEvent => {
-    const notes = NoteList(customEvent)
-    
+    NoteList()
 })
 
 const render = (noteArray) => {
-    const allNotesConvertedToStrings = noteArray.map(
-        // convert the notes objects to HTML with NoteHTMLConverter
+    const allNotesConvertedToStrings = noteArray.map(noteObj => {
+        return NoteHTMLConverter(noteObj)
+    }).join("")
 
-    ).join("")
-
-    contentTarget.innerHTML = j
+    contentTarget.innerHTML = `
+    <div>    
+        <h3>Notes</h3
+            ${allNotesConvertedToStrings}
+    </div>
+    `
 }
 
-// Standard list function you're used to writing by now. BUT, don't call this in main.js! Why not?
 export const NoteList = () => {
     getNotes()
         .then(() => {
@@ -26,3 +29,5 @@ export const NoteList = () => {
             render(allNotes)
         })
 }
+
+

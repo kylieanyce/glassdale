@@ -1,6 +1,8 @@
 const contentTarget = document.querySelector(".noteListButton")
 const eventHub = document.querySelector(".container")
 
+
+//dispatches customEvent that specific button was clicked------------------
 eventHub.addEventListener("click", clickEvent => {
     if (clickEvent.target.id === "showNotes") {
         const customEvent = new CustomEvent("showNotesClicked")
