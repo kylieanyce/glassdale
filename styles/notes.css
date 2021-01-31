@@ -4,11 +4,13 @@
 .form {
     display: flex;
     flex-wrap: wrap;
+    justify-content: space-evenly;
 }
 .noteFormContainer {
     border: black 2px solid;
-    padding: 10px;
+    padding: 10px 30px 30px 30px;
     margin: 10px;
+    text-align: center;
 }
 .note {
     border: 2px black solid;
@@ -18,10 +20,14 @@
 aside {
     padding: 20px;
     margin: 10px;
+    text-align: center;
 }
 .oneNote {
     padding: 5px;
 }
-.button {
-    color: blue;
+.formBoxes {
+    padding: 5px;
 }
+/* #showNotes {
+    color: blue;
+} */
