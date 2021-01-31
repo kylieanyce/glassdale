@@ -1,0 +1,21 @@
+.noteListContainer {
+    border: 2px black solid
+}
+.form {
+    display: flex;
+    flex-wrap: wrap;
+}
+.noteFormContainer {
+    border: black 2px solid;
+    padding: 10px;
+    margin: 10px;
+}
+.note {
+    border: 2px black solid;
+    padding: 10px;
+    margin: 10px;
+}
+aside {
+    padding: 20px;
+    margin: 10px;
+}
