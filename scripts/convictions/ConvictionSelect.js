@@ -15,6 +15,7 @@ export const ConvictionSelect = () => {
 const render = convictionsCollection => {
     
     contentTarget.innerHTML = `
+        <h3>Crimes</h3>
         <select class="dropdown" id="crimeSelect">
             <option value="0">Please select a crime...</option>
             ${

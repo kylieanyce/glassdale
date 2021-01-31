@@ -15,10 +15,10 @@ const render = (noteArray) => {
     }).join("")
 
     contentTarget.innerHTML = `
-    <div>    
         <h3>Notes</h3
-            ${allNotesConvertedToStrings}
-    </div>
+        <div>    
+        ${allNotesConvertedToStrings}
+        </div>
     `
 }
 

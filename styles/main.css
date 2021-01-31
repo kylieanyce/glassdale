@@ -1,1 +1,8 @@
-@import "./criminals.css"
+@import "criminals.css";
+@import "notes.css";
+
+.mainContent {
+    display: flex;
+    padding-top: 15px;
+}
+
