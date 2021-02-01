@@ -4,10 +4,18 @@ import { NoteHTMLConverter } from "./Note.js";
 const contentTarget = document.querySelector(".noteList")
 const eventHub = document.querySelector(".container")
 
+let showNotesClicked = false
+
 //listens for customevent button clicked and sends to dom-------------------
 eventHub.addEventListener("showNotesClicked", customEvent => {
     NoteList()
-    if (customEvent)
+    showNotesClicked = true
+})
+
+eventHub.addEventListener("noteStateChanged", event => {
+    if (showNotesClicked) {
+        render(useNotes())
+    }
 })
 
 const render = (noteArray) => {
