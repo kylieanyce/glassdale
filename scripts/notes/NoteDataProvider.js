@@ -8,7 +8,6 @@ export const useNotes = () => {
 }
 
 export const saveNote = note => {
-    debugger
     return fetch('http://localhost:8088/notes', {
         method: "POST",
         headers: {
@@ -30,7 +29,15 @@ export const getNotes = () => {
 }
 
 const dispatchStateChangeEvent = () => {
-    const noteStateChangedEvent = new CustomEvent("noteStateChanged")
+    const noteStateChangedEvent = new CustomEvent("noteStateChanged") 
 
     eventHub.dispatchEvent(noteStateChangedEvent)
 }
+
+//delete this
+eventHub.addEventListener("click", clickEvent => {
+    if (clickEvent.target.id === "showNotes") {
+        const customEvent = new CustomEvent("showNotesClicked")
+        eventHub.dispatchEvent(customEvent)
+    }
+})
