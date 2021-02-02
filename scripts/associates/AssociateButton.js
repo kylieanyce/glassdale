@@ -7,6 +7,7 @@ const eventHub = document.querySelector(".container")
 
 //listens for associate button click and dispatches payload------------
 eventHub.addEventListener("click", event => {
+    // debugger
     if (event.target.id.startsWith("associate--")){
         const [prefix, criminalId] = event.target.id.split("--")
         const customEvent = new CustomEvent("associatesClicked", {
