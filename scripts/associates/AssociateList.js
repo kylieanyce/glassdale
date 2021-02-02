@@ -7,6 +7,8 @@ const eventHub = document.querySelector(".container")
 export const AssociateList = (criminalObj) => {
     const htmlrep = `
     <div>
+        <div class="modal--content">
+
         <h3>Known Associates for ${criminalObj.name}</h3>
         ${criminalObj.known_associates.map(associate => {
             return `
@@ -15,6 +17,8 @@ export const AssociateList = (criminalObj) => {
                     <div class="associateAlibi">${associate.alibi}</div>
                 </section>`
         }).join("")}
+        <button id="modal--close">close modal</button>
+        </div>
     </div>`
     contentContainer.innerHTML = htmlrep
 }
@@ -28,3 +32,13 @@ eventHub.addEventListener("associatesClicked", event => {
     })
     AssociateList(findCriminalObj)
 })
+
+eventHub.addEventListener("click", event => {
+    if (event.target.id === "modal--close") {
+        closeModal()
+    }
+})
+
+const closeModal = () => {
+    contentContainer.innerHTML = ""
+}
