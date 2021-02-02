@@ -33,11 +33,3 @@ const dispatchStateChangeEvent = () => {
 
     eventHub.dispatchEvent(noteStateChangedEvent)
 }
-
-//delete this
-eventHub.addEventListener("click", clickEvent => {
-    if (clickEvent.target.id === "showNotes") {
-        const customEvent = new CustomEvent("showNotesClicked")
-        eventHub.dispatchEvent(customEvent)
-    }
-})

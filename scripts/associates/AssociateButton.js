@@ -12,7 +12,7 @@ eventHub.addEventListener("click", event => {
         const [prefix, criminalId] = event.target.id.split("--")
         const customEvent = new CustomEvent("associatesClicked", {
             detail: {
-                crimnalId: parseInt(criminalId)
+                criminalId: parseInt(criminalId)
             }
         })
         eventHub.dispatchEvent(customEvent)

@@ -8,7 +8,7 @@ export const AssociateList = (criminalObj) => {
     const htmlrep = `
     <div>
         <h3>Known Associates for ${criminalObj.name}</h3>
-        ${criminalObj.known__associates.map(associate => {
+        ${criminalObj.known_associates.map(associate => {
             return `
                 <section class="associatesContainer">
                     <div class="associateName">${associate.name}</div>
@@ -20,5 +20,11 @@ export const AssociateList = (criminalObj) => {
 }
 
 eventHub.addEventListener("associatesClicked", event => {
-    console.log("clicked")
+    // debugger
+    const chosenCriminal = event.detail.criminalId
+    const criminalArray = useCriminals()
+    const findCriminalObj = criminalArray.find(criminalobj => {
+        return criminalobj.id === chosenCriminal
+    })
+    AssociateList(findCriminalObj)
 })
