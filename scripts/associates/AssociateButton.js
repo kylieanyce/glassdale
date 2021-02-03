@@ -1,21 +1,20 @@
 export const AssociatesButton = (criminal) => {
-    // debugger
     return `<button id="associate--${criminal.id}">Associate Alibis</button>`
 }
     
 const eventHub = document.querySelector(".container")
 
+
+//listens for associate button click and dispatches payload------------
 eventHub.addEventListener("click", event => {
-    console.log("event", event.target.id)
-    if (event.target.id.startsWith("asociates--")){
+    // debugger
+    if (event.target.id.startsWith("associate--")){
         const [prefix, criminalId] = event.target.id.split("--")
         const customEvent = new CustomEvent("associatesClicked", {
             detail: {
-                crimnalId: parseInt(criminalID)
+                criminalId: parseInt(criminalId)
             }
         })
-        console.log(customEvent)
         eventHub.dispatchEvent(customEvent)
     }
-
 })

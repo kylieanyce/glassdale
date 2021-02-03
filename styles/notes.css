@@ -28,6 +28,12 @@ aside {
 .formBoxes {
     padding: 5px;
 }
-/* #showNotes {
-    color: blue;
-} */
+.modal--parent {
+    border: 2px black solid;
+    padding: 10px;
+    margin: 10px;
+    text-align: center;
+}
+.associatesContainer {
+    padding: 10px;
+}
