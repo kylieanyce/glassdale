@@ -1,46 +1,11 @@
 {
   "notes": [
     {
-      "note": "l",
-      "suspect": "l",
-      "date": "2021-01-01",
-      "author": "l",
-      "id": 1
-    },
-    {
-      "note": "l",
-      "suspect": "l",
-      "date": "2021-01-01",
-      "author": "l",
-      "id": 2
-    },
-    {
-      "note": "3",
-      "suspect": "3",
-      "date": "2021-01-07",
-      "author": "3",
-      "id": 3
-    },
-    {
-      "note": "looks scary",
-      "suspect": "Tim",
-      "date": "2021-01-26",
-      "author": "Hank",
-      "id": 4
-    },
-    {
       "suspect": "Don",
       "note": "Bad Hair",
       "date": "2021-01-20",
-      "author": "Benny",
+      "author": "Bernie",
       "id": 5
-    },
-    {
-      "suspect": "Levon",
-      "note": "Scaly skin",
-      "date": "2021-01-08",
-      "author": "Chadwick",
-      "id": 6
     },
     {
       "suspect": "JoAnn",
@@ -50,13 +15,6 @@
       "id": 7
     },
     {
-      "suspect": "William",
-      "note": "Shady",
-      "date": "2021-01-12",
-      "author": "Bradford",
-      "id": 8
-    },
-    {
       "suspect": "Franz",
       "note": "suspicious brown eyes",
       "date": "2021-01-14",
@@ -64,39 +22,11 @@
       "id": 9
     },
     {
-      "suspect": "barry",
-      "note": "smelly hair",
-      "date": "2021-01-27",
-      "author": "elton",
-      "id": 10
-    },
-    {
-      "suspect": "devon",
-      "note": "likes hot dogs",
-      "date": "2021-01-29",
-      "author": "Tamela",
-      "id": 11
-    },
-    {
-      "suspect": "devon",
-      "note": "likes hot dogs",
-      "date": "2021-01-29",
-      "author": "Tamela",
-      "id": 12
-    },
-    {
       "suspect": "JimJam",
       "note": "bad at googling",
       "date": "2021-01-20",
       "author": "Urie",
       "id": 13
-    },
-    {
-      "suspect": "Rawly",
-      "note": "hot hands",
-      "date": "2021-01-05",
-      "author": "Durango",
-      "id": 14
     },
     {
       "suspect": "Geraldine",
