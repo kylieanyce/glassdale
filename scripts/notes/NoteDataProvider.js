@@ -4,6 +4,7 @@ const eventHub = document.querySelector(".container")
 let notes = []
 
 export const useNotes = () => {
+    console.log(notes)
     return notes.slice()
 }
 
@@ -28,8 +29,24 @@ export const getNotes = () => {
 
 }
 
+export const deleteNote = noteId => {
+    return fetch(`http://localhost:8088/notes/${noteId}`, {
+        method: "DELETE"
+    })
+        .then(getNotes)
+        .then(dispatchDeleteStateChange)
+}
+
+
 const dispatchStateChangeEvent = () => {
     const noteStateChangedEvent = new CustomEvent("noteStateChanged") 
 
     eventHub.dispatchEvent(noteStateChangedEvent)
+}
+
+
+const dispatchDeleteStateChange = () => {
+    const dispatchDeleteStateChange = new CustomEvent("deleteStateChanged") 
+
+    eventHub.dispatchEvent(dispatchDeleteStateChange)
 }
