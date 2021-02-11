@@ -1,9 +1,10 @@
 .noteListContainer {
-    border: 2px black solid
+    border: 2px black solid;
+    flex: 1 1;
 }
 .form {
     display: flex;
-    flex-wrap: wrap;
+    flex-direction: column;
     justify-content: space-evenly;
 }
 .noteFormContainer {
@@ -11,11 +12,14 @@
     padding: 10px 30px 30px 30px;
     margin: 10px;
     text-align: center;
+    background-color: lightsteelblue;
+
 }
 .note {
     border: 2px black solid;
     padding: 10px;
     margin: 10px;
+    background-color: lightsteelblue;
 }
 aside {
     padding: 20px;
@@ -36,4 +40,10 @@ aside {
 }
 .associatesContainer {
     padding: 10px;
+}
+.noteButton {
+    border: 2px black solid;
+    padding: 10px;
+    margin: 20px 10px 10px;
+    background-color: lightsteelblue;
 }

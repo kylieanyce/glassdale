@@ -1,0 +1,23 @@
+.witnesses {
+    border: 2px black solid;
+    margin: 10px;
+    text-align: center;
+}
+.witnessCard {
+    border: 2px black solid;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightsteelblue;
+}
+.witnessButton {
+    border: 2px black solid;
+    margin: 20px;
+    padding: 10px;
+    width: 250px;
+    background-color: lightsteelblue;
+
+}
+.witnessContainer {
+    display: flex;
+    justify-content: center;
+}

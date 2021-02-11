@@ -1,8 +1,27 @@
 @import "criminals.css";
 @import "notes.css";
+@import "witness.css";
 
+body {
+    text-align: center;
+    background-color: lightgrey;
+}
+header {
+    border: solid black 2px;
+    padding: 10px;
+    margin: 10px;
+    background-color: powderblue;
+
+}
 .mainContent {
     display: flex;
     padding-top: 15px;
 }
 
+.containerRight {
+    border: solid black 2px;
+    padding: 10px;
+    margin: 10px;
+    flex: 3 3;
+
+}
