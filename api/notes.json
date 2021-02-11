@@ -1,36 +1,11 @@
 {
   "notes": [
     {
-      "suspect": "1",
-      "note": "Shady",
-      "date": "2021-02-09",
-      "author": "Bradford",
+      "criminalId": "11",
+      "text": "Shady",
+      "date": "2021-02-16",
+      "author": "",
       "id": 1
-    },
-    {
-      "suspect": "1",
-      "note": "Shady",
-      "date": "2021-02-09",
-      "author": "Bradford",
-      "id": 2
-    },
-    {
-      "suspect": "1",
-      "note": "Shady",
-      "date": "2021-03-06",
-      "author": "Bradford",
-      "id": 3
-    },
-    {
-      "text": "Shady",
-      "id": 4
-    },
-    {
-      "suspect": "1",
-      "text": "Shady",
-      "date": "2021-02-19",
-      "author": "Bradford",
-      "id": 5
     }
   ]
 }
