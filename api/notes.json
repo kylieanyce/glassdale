@@ -1,11 +1,18 @@
 {
   "notes": [
     {
-      "criminalId": "11",
-      "text": "Shady",
-      "date": "2021-02-16",
-      "author": "",
+      "criminalId": "96",
+      "text": "Suspicious brown eyes",
+      "date": "2021-02-25",
+      "author": "Bradford",
       "id": 1
+    },
+    {
+      "criminalId": "36",
+      "text": "went on a tirade",
+      "date": "2021-02-24",
+      "author": "Butler",
+      "id": 2
     }
   ]
 }
