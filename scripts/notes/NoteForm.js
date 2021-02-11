@@ -1,16 +1,29 @@
+import { getCriminals, useCriminals } from "../criminals/CriminalDataProvider.js";
 import { saveNote } from "./NoteDataProvider.js";
 
 const contentTarget = document.querySelector(".noteFormContainer")
 const eventHub = document.querySelector(".container")
 
-const render = () => {
+
+export const NoteForm = () => {
+    getCriminals()
+    .then(() => {
+        const criminalsArray = useCriminals()
+        render(criminalsArray)
+    })
+}
+
+const render = (criminalsArray) => {
     contentTarget.innerHTML = `
             <h4>Add A Note Below</h4>
             <form class="form">
-                <div class="formBoxes">
-                    <label for="note-suspect">Suspect: </label>
-                    <input type="text" id="note-suspect">
-                </div>
+                <select id="select" class="formBoxes">
+                    <option value="0">Please select a criminal</option>
+                    ${criminalsArray.map(criminal => {
+                        return `<option id="note-suspect" value="${criminal.id}">${criminal.name}</option>`
+                        }).join("")
+                    }
+                </select>
                 <div class="formBoxes">
                     <label for="note-text">Note: </label>
                     <input type="text" id="note-text">
@@ -28,22 +41,18 @@ const render = () => {
     `
 }
 
-export const NoteForm = () => {
-    render()
-}
 
 eventHub.addEventListener("click", clickEvent => {
-    // console.log("event")
     if (clickEvent.target.id === "saveNote") {
         clickEvent.preventDefault()
-        const suspect = document.getElementById("note-suspect").value
-        const note = document.getElementById("note-text").value
+        const criminalId = document.querySelector("#select").value
+        const text = document.getElementById("note-text").value
         const date = document.getElementById("note-date").value
         const author = document.getElementById("note-author").value
         
         const newNote = {
-            "suspect": suspect,
-            "note": note,
+            "criminalId": criminalId,
+            "text": text,
             "date": date,
             "author": author
         }
