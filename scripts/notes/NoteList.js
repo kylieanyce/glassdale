@@ -11,6 +11,7 @@ let showNotesClicked = false
 
 //listens for customevent button clicked and sends to dom-------------------
 eventHub.addEventListener("showNotesClicked", customEvent => {
+    // debugger
     NoteList()
     showNotesClicked = true
 })

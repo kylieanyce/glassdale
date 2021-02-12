@@ -4,7 +4,6 @@ const eventHub = document.querySelector(".container")
 let notes = []
 
 export const useNotes = () => {
-    console.log(notes)
     return notes.slice()
 }
 
