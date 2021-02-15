@@ -4,7 +4,7 @@ import { FacilitiesHTML } from "./Facility.js"
 import { getFacilities, useFacilities } from "./FacilityProvider.js"
 
 
-const contentTarget = document.querySelector(".facilityContainer")
+const contentTarget = document.querySelector(".criminalsContainer")
 const eventHub = document.querySelector(".container")
 
 

@@ -8,7 +8,7 @@ import { FacilitiesList } from '../facility/FacilityList.js';
 
 
 const eventHub = document.querySelector(".container")
-const criminalContainer = document.querySelector(".criminalsContainer")
+const contentContainer = document.querySelector(".criminalsContainer")
 
 
 //listens for crimeChose and matches crime with criminals then sends to DOM-----------------
@@ -77,7 +77,7 @@ export const CriminalList = () => {
 
 const render = (criminalsToRender, allFacilities, allRelationships) => {
     // Step 1 - Iterate all criminals
-    criminalContainer.innerHTML = 
+    contentContainer.innerHTML = 
     `<h3>Glassdale Criminals</h3>
     <section class="criminalList">
     ${ criminalsToRender.map(
