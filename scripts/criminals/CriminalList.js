@@ -30,7 +30,6 @@ eventHub.addEventListener("crimeChosen", event => {
 })
 
 eventHub.addEventListener("facilitiesButtonClicked", event => {
-    console.log("clicked")
     FacilitiesList()
 })
 

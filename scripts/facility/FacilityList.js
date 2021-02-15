@@ -1,5 +1,6 @@
 import { getCriminals, useCriminals } from "../criminals/CriminalDataProvider.js"
 import { getCriminalFacilities, useCriminalFacilities } from "./CriminalFacilityProvider.js"
+import { FacilitiesHTML } from "./Facility.js"
 import { getFacilities, useFacilities } from "./FacilityProvider.js"
 
 
@@ -18,9 +19,9 @@ export const FacilitiesList = () => {
                 const facilities = useFacilities()
                 const crimFac = useCriminalFacilities()
                 const criminals = useCriminals()
-                // console.table(facilities)
-                // console.table(crimFac)
-                // console.table(criminals)
+                console.table(facilities)
+                console.table(crimFac)
+                console.table(criminals)
 
                 // Pass all three collections of data to render()
                 render(criminals, facilities, crimFac)
@@ -34,19 +35,20 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
     contentTarget.innerHTML = 
     `<h3>Glassdale Criminals</h3>
     <section class="criminalList">
-    ${ criminalsToRender.map(
-        (criminalObject) => {
+    ${ allFacilities.map(
+        (facilityObject) => {
+            
             // Step 2 - Filter all relationships to get only ones for this criminal
-            const facilityRelationshipsForThisCriminal = allRelationships.filter(cf => cf.criminalId === criminalObject.id)
-
+            const criminalsForThisFacility = allRelationships.filter(cf => cf.facilityId === facilityObject.id)
             // Step 3 - Convert the relationships to facilities with map()
-            const facilities = facilityRelationshipsForThisCriminal.map(cf => {
-                const matchingFacilityObject = allFacilities.find(facility => facility.id === cf.facilityId)
-                return matchingFacilityObject
+            const criminals = criminalsForThisFacility.map(cf => {
+                const matchingCriminalObject = criminalsToRender.find(criminal => criminal.id === cf.criminalId)
+                return matchingCriminalObject
             })
-
+            console.log("facility", facilityObject)
+            console.log("criminal", criminals)
             // Must pass the matching facilities to the Criminal component
-            return Criminals(criminalObject, facilities)
+            return FacilitiesHTML(facilityObject, criminals)
         }
     ).join("") }
     </section>`
