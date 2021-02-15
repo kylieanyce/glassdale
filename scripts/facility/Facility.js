@@ -6,7 +6,7 @@ export const FacilitiesHTML = (facility, criminal) => {
         <p><strong>Security Level: </strong>${facility.securityLevel}</p>
     </div>
     <div>
-        <p>Criminal: ${criminal.map(c => `<p>${c.name}</p>`).join("")}</p>
+        <p><strong>Name: </strong>${criminal.map(c => `<p>${c.name}</p>`).join("")}</p>
     </div>
     </section>
     `

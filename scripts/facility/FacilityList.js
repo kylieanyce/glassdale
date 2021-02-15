@@ -30,7 +30,7 @@ export const FacilitiesList = () => {
 const render = (criminalsToRender, allFacilities, allRelationships) => {
     // Step 1 - Iterate all criminals
     contentTarget.innerHTML = 
-    `<h3>Glassdale Criminals</h3>
+    `<h2>Facilities</h2>
     <section class="facilityList">
     ${ allFacilities.map(
         (facilityObject) => {

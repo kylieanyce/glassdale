@@ -1,7 +1,8 @@
 .witnesses {
     border: 2px black solid;
+    padding: 10px;
     margin: 10px;
-    text-align: center;
+    background-color: lightsteelblue;
 }
 .witnessCard {
     border: 2px black solid;

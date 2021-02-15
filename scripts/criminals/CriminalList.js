@@ -78,7 +78,7 @@ export const CriminalList = () => {
 const render = (criminalsToRender, allFacilities, allRelationships) => {
     // Step 1 - Iterate all criminals
     contentContainer.innerHTML = 
-    `<h3>Glassdale Criminals</h3>
+    `<h2>Glassdale Criminals</h2>
     <section class="criminalList">
     ${ criminalsToRender.map(
         (criminalObject) => {
