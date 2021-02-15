@@ -7,27 +7,6 @@ const eventHub = document.querySelector(".container")
 const criminalContainer = document.querySelector(".criminalsContainer")
 
 
-const renderToDom = (criminalArray) => {
-    let criminalsHTMLrep = ""
-        for (const criminal of criminalArray) {
-            criminalsHTMLrep += Criminals(criminal)
-        }
-        criminalContainer.innerHTML = `
-            <h3>Glassdale Criminals</h3>
-            <section class="criminalList">
-            ${criminalsHTMLrep}
-            </section>`
-}
-
-export const CriminalList = () => {
-    getCriminals()
-        .then(() => {
-            const criminalArray = useCriminals()
-            renderToDom(criminalArray)
-            }
-        )
-}
-
 //listens for crimeChose and matches crime with criminals then sends to DOM-----------------
 eventHub.addEventListener("crimeChosen", event => {
     if (event.detail.crimeThatWasChosen !== "0"){
@@ -61,3 +40,27 @@ eventHub.addEventListener("officerSelected", event => {
     renderToDom(filteredCriminalsArray)
     }
 )
+
+
+export const CriminalList = () => {
+    getCriminals()
+        .then(() => {
+            const criminalArray = useCriminals()
+            renderToDom(criminalArray)
+            }
+        )
+}
+
+const renderToDom = (criminalArray) => {
+    let criminalsHTMLrep = ""
+        for (const criminal of criminalArray) {
+            criminalsHTMLrep += Criminals(criminal)
+        }
+        criminalContainer.innerHTML = `
+            <h3>Glassdale Criminals</h3>
+            <section class="criminalList">
+            ${criminalsHTMLrep}
+            </section>`
+}
+
+
