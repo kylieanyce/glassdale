@@ -1,6 +1,8 @@
 @import "criminals.css";
 @import "notes.css";
 @import "witness.css";
+@import "associates.css";
+@import "facilities.css";
 
 body {
     text-align: center;

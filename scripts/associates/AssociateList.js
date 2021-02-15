@@ -16,7 +16,7 @@ export const AssociateList = (criminalObj) => {
                     <div class="associateAlibi">"${associate.alibi}"</div>
                 </section>`
         }).join("")}
-        <button id="modal--close">close modal</button>
+        <button id="modal--close">close</button>
         </div>
     </div>`
     contentContainer.innerHTML = htmlrep

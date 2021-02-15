@@ -4,9 +4,11 @@ import { Criminals } from "./Criminal.js";
 import { useConvictions } from '../convictions/ConvictionDataProvider.js';
 import { getCriminalFacilities, useCriminalFacilities } from '../facility/CriminalFacilityProvider.js';
 import { getFacilities, useFacilities } from '../facility/FacilityProvider.js';
+import { FacilitiesList } from '../facility/FacilityList.js';
+
 
 const eventHub = document.querySelector(".container")
-const criminalContainer = document.querySelector(".criminalsContainer")
+const contentContainer = document.querySelector(".criminalsContainer")
 
 
 //listens for crimeChose and matches crime with criminals then sends to DOM-----------------
@@ -27,10 +29,14 @@ eventHub.addEventListener("crimeChosen", event => {
     }
 })
 
+eventHub.addEventListener("facilitiesButtonClicked", event => {
+    FacilitiesList()
+})
+
 //listens for which officer chosen and sends matching criminals to DOM----------------------------
 eventHub.addEventListener("officerSelected", event => {
     // console.log("event happened")
-        const officerName = event.detail.officer
+    const officerName = event.detail.officer
     // console.log(event.detail)
     const criminals = useCriminals()
     const filteredCriminalsArray = criminals.filter(
@@ -46,6 +52,7 @@ eventHub.addEventListener("officerSelected", event => {
     render(filteredCriminalsArray, facilities, allRelationships)
     }
 )
+
 
 export const CriminalList = () => {
     // Kick off the fetching of both collections of data
@@ -70,8 +77,8 @@ export const CriminalList = () => {
 
 const render = (criminalsToRender, allFacilities, allRelationships) => {
     // Step 1 - Iterate all criminals
-    criminalContainer.innerHTML = 
-    `<h3>Glassdale Criminals</h3>
+    contentContainer.innerHTML = 
+    `<h2>Glassdale Criminals</h2>
     <section class="criminalList">
     ${ criminalsToRender.map(
         (criminalObject) => {
@@ -91,17 +98,6 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
     </section>`
 }
 
-//DELETE THIS
-const renderToDom = (criminalArray) => {
-    let criminalsHTMLrep = ""
-        for (const criminal of criminalArray) {
-            criminalsHTMLrep += Criminals(criminal)
-        }
-        criminalContainer.innerHTML = `
-            <h3>Glassdale Criminals</h3>
-            <section class="criminalList">
-            ${criminalsHTMLrep}
-            </section>`
-}
+
 
 

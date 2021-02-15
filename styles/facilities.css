@@ -1,16 +1,16 @@
-.witnesses {
+.facilityList {
     border: 2px black solid;
     padding: 10px;
     margin: 10px;
     background-color: lightsteelblue;
 }
-.witnessCard {
+.facilities {
     border: 2px black solid;
     padding: 10px;
     margin: 10px;
     background-color: lightsteelblue;
 }
-.witnessButton {
+.facilitiesButton {
     border: 2px black solid;
     margin: 20px;
     padding: 10px;
@@ -18,7 +18,7 @@
     background-color: lightsteelblue;
 
 }
-.witnessContainer {
+.facilityContainer {
     display: flex;
     justify-content: center;
 }

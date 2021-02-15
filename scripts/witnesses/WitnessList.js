@@ -23,8 +23,8 @@ const render = witnessArray => {
         witnessHTMLrep += WitnessHTML(witness)
     }
     contentTarget.innerHTML = `
+        <h2>Witness Statements</h2>
         <section class="witnesses">
-        <h3>Witness Statements</h3>
         ${witnessHTMLrep}
         </section>
     `
