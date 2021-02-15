@@ -20,8 +20,10 @@ eventHub.addEventListener("crimeChosen", event => {
         // console.log(chosenConvictionObj.name)
         const criminalArray = useCriminals()
         const filteredCriminalsArray = criminalArray.filter(criminalObj => criminalObj.conviction === chosenConvictionObj.name)
+        const facilities = useFacilities()
+        const allRelationships = useCriminalFacilities()
 
-        render(filteredCriminalsArray)
+        render(filteredCriminalsArray, facilities, allRelationships)
     }
 })
 
@@ -39,7 +41,9 @@ eventHub.addEventListener("officerSelected", event => {
             
         }
     )
-    render(filteredCriminalsArray)
+    const facilities = useFacilities()
+    const allRelationships = useCriminalFacilities()
+    render(filteredCriminalsArray, facilities, allRelationships)
     }
 )
 

@@ -4,6 +4,19 @@ const contentTarget = document.querySelector(".filters__crime")
 const eventHub = document.querySelector(".container")
 
 
+//listens for when someone selects a crime and grabs name of crime---------
+eventHub.addEventListener("change", event => {
+    // console.log("event happened")
+    if (event.target.id === "crimeSelect") {
+        const customEvent = new CustomEvent("crimeChosen", {
+            detail: {
+                crimeThatWasChosen: event.target.value
+            }
+        })
+        eventHub.dispatchEvent(customEvent)
+    }
+})
+
 export const ConvictionSelect = () => {
     getConvictions()
     .then( () => {
@@ -28,15 +41,3 @@ const render = convictionsCollection => {
     `
 }
 
-//listens for when someone selects a crime and grabs name of crime---------
-eventHub.addEventListener("change", event => {
-    // console.log("event happened")
-    if (event.target.id === "crimeSelect") {
-        const customEvent = new CustomEvent("crimeChosen", {
-            detail: {
-                crimeThatWasChosen: event.target.value
-            }
-        })
-        eventHub.dispatchEvent(customEvent)
-    }
-})
