@@ -91,17 +91,6 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
     </section>`
 }
 
-//DELETE THIS
-const renderToDom = (criminalArray) => {
-    let criminalsHTMLrep = ""
-        for (const criminal of criminalArray) {
-            criminalsHTMLrep += Criminals(criminal)
-        }
-        criminalContainer.innerHTML = `
-            <h3>Glassdale Criminals</h3>
-            <section class="criminalList">
-            ${criminalsHTMLrep}
-            </section>`
-}
+
 
 

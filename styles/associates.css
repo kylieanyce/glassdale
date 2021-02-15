@@ -1,0 +1,15 @@
+.modal--parent {
+    border: 2px black solid;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightsteelblue;
+}
+.associatesContainer {
+    padding: 10px;
+}
+.associateName{
+    padding: 5px;
+}
+.associateAlibi {
+    padding: 5px;
+}
