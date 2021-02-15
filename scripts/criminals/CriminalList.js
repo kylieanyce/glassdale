@@ -4,6 +4,8 @@ import { Criminals } from "./Criminal.js";
 import { useConvictions } from '../convictions/ConvictionDataProvider.js';
 import { getCriminalFacilities, useCriminalFacilities } from '../facility/CriminalFacilityProvider.js';
 import { getFacilities, useFacilities } from '../facility/FacilityProvider.js';
+import { FacilitiesList } from '../facility/FacilityList.js';
+
 
 const eventHub = document.querySelector(".container")
 const criminalContainer = document.querySelector(".criminalsContainer")
@@ -27,10 +29,15 @@ eventHub.addEventListener("crimeChosen", event => {
     }
 })
 
+eventHub.addEventListener("facilitiesButtonClicked", event => {
+    console.log("clicked")
+    FacilitiesList()
+})
+
 //listens for which officer chosen and sends matching criminals to DOM----------------------------
 eventHub.addEventListener("officerSelected", event => {
     // console.log("event happened")
-        const officerName = event.detail.officer
+    const officerName = event.detail.officer
     // console.log(event.detail)
     const criminals = useCriminals()
     const filteredCriminalsArray = criminals.filter(
@@ -46,6 +53,7 @@ eventHub.addEventListener("officerSelected", event => {
     render(filteredCriminalsArray, facilities, allRelationships)
     }
 )
+
 
 export const CriminalList = () => {
     // Kick off the fetching of both collections of data
