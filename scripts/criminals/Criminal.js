@@ -1,13 +1,27 @@
 import { AssociatesButton } from "../associates/AssociateButton.js"
 
-export const Criminals = (criminal) => {
+export const Criminals = (criminalObject, facilities) => {
     return `
-        <section class="criminalCard">
-            <h3>Name: ${criminal.name}</h3>
-            <p>Age: ${criminal.age}</p>
-            <p>Crime: ${criminal.conviction}
-            <p>Term Start: ${new Date(criminal.incarceration.start).toLocaleDateString('en-US')}</p>
-            <p>Term End: ${new Date(criminal.incarceration.end).toLocaleDateString('en-US')}</p>
-            ${AssociatesButton(criminal)}
-        </section>`
+    <div class="criminal">
+        <h2>${criminalObject.name}</h2>
+        <div class="criminal__details">
+            <p>Convicted for ${criminalObject.conviction}</p>
+            <p>Arrested by ${criminalObject.arrestingOfficer}</p>
+            <p>Incarcerated between:
+                ${new Date(criminalObject.incarceration.start).toLocaleDateString()} and
+                ${new Date(criminalObject.incarceration.end).toLocaleDateString()}
+            </p>
+            <p>Age: ${criminalObject.age}</p>
+            <div>
+                <h3>Facilities</h3>
+                <p>
+                    ${facilities.map(f => `<p>${f.facilityName}</p>`).join("")}
+                </p>
+            </div>
+            ${AssociatesButton(criminalObject)}
+        </div>
+    </div>
+    `
 }
+
+
