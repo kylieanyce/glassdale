@@ -23,5 +23,10 @@ header {
     padding: 10px;
     margin: 10px;
     flex: 3 3;
-
+    background-color: cornsilk;
+}
+.noteListContainer {
+    border: 2px black solid;
+    flex: 1 1;
+    background-color: cornsilk;
 }

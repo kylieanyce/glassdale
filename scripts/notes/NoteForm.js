@@ -26,7 +26,7 @@ const render = (criminalsArray) => {
                 <select id="select" class="formBoxes">
                     <option value="0">Please select a criminal</option>
                     ${criminalsArray.map(criminal => {
-                        return `<option class="note-suspect" id="${criminal.id}">${criminal.name}</option>`
+                        return `<option class="note-suspect" value="${criminal.id}">${criminal.name}</option>`
                         }).join("")
                     }
                 </select>
@@ -55,7 +55,7 @@ eventHub.addEventListener("click", clickEvent => {
         clickEvent.preventDefault()
         //the index.html document is searched for the specific classes called in ()
         //the value of what was entered into those areas is put into vars
-        const criminalId = document.querySelector("#select").value
+        const criminalId = parseInt(document.querySelector("#select").value)
         const text = document.getElementById("note-text").value
         const date = document.getElementById("note-date").value
         const author = document.getElementById("note-author").value
