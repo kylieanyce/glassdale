@@ -2,6 +2,7 @@ import { getNotes, useNotes } from "./NoteDataProvider.js";
 import { NoteHTMLConverter } from "./Note.js";
 import { useCriminals, getCriminals } from '../criminals/CriminalDataProvider.js'
 import { deleteNote } from "./NoteDataProvider.js";
+import { useCriminalFacilities } from "../facility/CriminalFacilityProvider.js";
 
 
 const contentTarget = document.querySelector(".noteList")
@@ -22,8 +23,7 @@ eventHub.addEventListener("showNotesClicked", customEvent => {
 eventHub.addEventListener("noteStateChanged", event => {
     //when save note button is clicked and showNotesClicked is true..
     if (showNotesClicked) {
-        //render notes array
-        render(useNotes())
+        render(useNotes(), useCriminals())
     }
 })
 
@@ -79,6 +79,8 @@ export const NoteList = () => {
 //takes two arrays and renders to DOM---------------------------------------------
 const render = (noteArray, criminalsArray) => {
     //maps through first array
+    console.log("notes", noteArray)
+    console.log("criminals", criminalsArray)
     contentTarget.innerHTML = noteArray.map(note => {
         //for each object in the first array, map through second array. For each
         //object in second array, find the id that matches the first array's

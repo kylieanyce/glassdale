@@ -1,46 +1,32 @@
 {
   "notes": [
     {
-      "criminalId": "14",
-      "text": "smells bad in the bottom",
-      "date": "2021-02-23",
+      "criminalId": 13,
+      "text": "Smelly back hair",
+      "date": "2021-02-17",
       "author": "Timmy",
-      "id": 3
+      "id": 1
     },
     {
-      "criminalId": "91",
-      "text": "went on a tirade",
-      "date": "2021-03-06",
-      "author": "Kevin",
+      "criminalId": 4,
+      "text": "bad breath",
+      "date": "2021-02-20",
+      "author": "Bob",
+      "id": 2
+    },
+    {
+      "criminalId": 14,
+      "text": "Shady",
+      "date": "2021-03-05",
+      "author": "Bradford",
       "id": 4
     },
     {
-      "criminalId": "13",
-      "text": "long back hair",
-      "date": "2021-02-16",
-      "author": "Hunter",
-      "id": 5
-    },
-    {
-      "criminalId": "2",
-      "text": "can't smell anything",
-      "date": "2021-03-04",
-      "author": "BillyBob",
-      "id": 6
-    },
-    {
-      "criminalId": "13",
-      "text": "Big head",
-      "date": "2021-02-03",
-      "author": "gary",
-      "id": 8
-    },
-    {
-      "criminalId": "14",
+      "criminalId": 13,
       "text": "Shady",
-      "date": "2021-02-22",
+      "date": "2021-02-26",
       "author": "Bradford",
-      "id": 9
+      "id": 5
     }
   ]
 }

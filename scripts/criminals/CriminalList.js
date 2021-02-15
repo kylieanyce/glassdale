@@ -70,7 +70,10 @@ export const CriminalList = () => {
 
 const render = (criminalsToRender, allFacilities, allRelationships) => {
     // Step 1 - Iterate all criminals
-    criminalContainer.innerHTML = criminalsToRender.map(
+    criminalContainer.innerHTML = 
+    `<h3>Glassdale Criminals</h3>
+    <section class="criminalList">
+    ${ criminalsToRender.map(
         (criminalObject) => {
             // Step 2 - Filter all relationships to get only ones for this criminal
             const facilityRelationshipsForThisCriminal = allRelationships.filter(cf => cf.criminalId === criminalObject.id)
@@ -84,7 +87,8 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
             // Must pass the matching facilities to the Criminal component
             return Criminals(criminalObject, facilities)
         }
-    ).join("")
+    ).join("") }
+    </section>`
 }
 
 //DELETE THIS
