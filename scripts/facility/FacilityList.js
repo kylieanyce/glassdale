@@ -19,9 +19,6 @@ export const FacilitiesList = () => {
                 const facilities = useFacilities()
                 const crimFac = useCriminalFacilities()
                 const criminals = useCriminals()
-                console.table(facilities)
-                console.table(crimFac)
-                console.table(criminals)
 
                 // Pass all three collections of data to render()
                 render(criminals, facilities, crimFac)
@@ -34,7 +31,7 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
     // Step 1 - Iterate all criminals
     contentTarget.innerHTML = 
     `<h3>Glassdale Criminals</h3>
-    <section class="criminalList">
+    <section class="facilityList">
     ${ allFacilities.map(
         (facilityObject) => {
             
@@ -45,8 +42,6 @@ const render = (criminalsToRender, allFacilities, allRelationships) => {
                 const matchingCriminalObject = criminalsToRender.find(criminal => criminal.id === cf.criminalId)
                 return matchingCriminalObject
             })
-            console.log("facility", facilityObject)
-            console.log("criminal", criminals)
             // Must pass the matching facilities to the Criminal component
             return FacilitiesHTML(facilityObject, criminals)
         }

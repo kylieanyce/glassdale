@@ -1,0 +1,19 @@
+.facilityContainer {
+    border: 2px black solid;
+    margin: 10px;
+    text-align: center;
+}
+.facilities {
+    border: 2px black solid;
+    padding: 10px;
+    margin: 10px;
+    background-color: lightsteelblue;
+}
+.facility__button {
+    border: 2px black solid;
+    margin: 20px;
+    padding: 10px;
+    width: 250px;
+    background-color: lightsteelblue;
+
+}
